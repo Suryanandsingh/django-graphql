@@ -1,0 +1,57 @@
+query AllMovies{
+  allMovies{
+    movieId
+    title
+    director{
+      name
+      awardWin
+    }
+    actor{
+      name
+      noOfMovies
+    }
+  }
+}
+
+query GetMovie{
+  getMovie(movieId: 1){
+    movieId
+    title
+    director{
+      name
+      awardWin
+    }
+    actor{
+      name
+      noOfMovies
+    }
+  }
+}
+
+query AllDirectors{
+  allDirectors{
+    name
+    place
+  }
+}
+
+query GetDirector{
+  getDirector(name:"MNOP"){
+    name
+    place
+  }
+}
+
+query AllActors{
+  allActors{
+    name
+    place
+  }
+}
+
+query GetActor{
+  getActor(name:"Actor1"){
+    name
+    dateOfBirth
+  }
+}
