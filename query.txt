@@ -55,3 +55,57 @@ query GetActor{
     dateOfBirth
   }
 }
+
+query AllBooks{
+  allBooks{
+    id
+    title
+    rank
+    rating
+  }
+}
+query AllAuthor{
+  allAuthors{
+    id
+    name
+    nationality
+  }
+}
+mutation CreateBook{
+  createBook(title:"book 2", description:"des", image:"", genres:"drama", rating:3.5, noOfPages: 123, author:"singh", rank: 12, weight:12, quantity: 120, isbn:"hesdff", publisher:"dffsd", language:"English", dimensions:"2x32x12", countryOfOrigin:"India", publicationDate:"12/12/2022"){
+    book{
+      id
+      title
+    }
+  }
+}
+mutation UpdateBook{
+  updateBook(id: 1, title:"book update"){
+      book{
+        id
+        title
+      }
+  }
+}
+mutation CreateAuthor{
+  createAuthor(name:"author_3_dummy", dateOfBirth:"12/12/1992", awardWin: 31, nationality:"India", noOfBooks: 123){
+    author{
+      id
+      name
+    }
+  }
+}
+mutation UpdateAuthor{
+  updateAuthor(id:4, name:"author_4"){
+    author{
+      id
+    }
+  }
+}
+mutation DeleteAuthor{
+  deleteAuthor(id:4){
+    author{
+      id
+    }
+  }
+}
